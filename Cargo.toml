@@ -2,7 +2,26 @@
 name = "snx-rs-gui"
 version = "0.1.0"
 edition = "2021"
+description = "Gui desktop application for snx-rs VPN tunnel tool"
+
+[package.metadata.bundle]
+name = "snx-rs-gui"
+identifier = "github.com/MrWolf-K9/snx-rs-gui"
+version = "1.0.0"
+copyright = "MIT License Modern Variant"
+category = "Developer Tool"
+short_description = "Gui desktop application for snx-rs VPN tunnel tool"
+resources = ["assets"]
+icon = ["assets/32x32.png"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+chrono = { version = "0.4", feature = ["serde"] } 
+dioxus = { git = "https://github.com/DioxusLabs/dioxus" }
+dioxus-desktop = { git = "https://github.com/DioxusLabs/dioxus"}
+dioxus-logger = "0.4.1"
+log = "0.4.20"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1.29.1", feature = "time" }
