@@ -1,13 +1,13 @@
 [package]
 name = "snx-rs-gui"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "Gui desktop application for snx-rs VPN tunnel tool"
 
 [package.metadata.bundle]
 name = "snx-rs-gui"
 identifier = "github.com/MrWolf-K9/snx-rs-gui"
-version = "v0.1.0"
+version = "v0.1.1"
 copyright = "MIT License Modern Variant"
 category = "Developer Tool"
 short_description = "Gui desktop application for snx-rs VPN tunnel tool"
