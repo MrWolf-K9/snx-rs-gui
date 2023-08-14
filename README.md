@@ -16,3 +16,6 @@ Have running snx-rs service in `-m command` mode
 
 ## Usage
 - For configuring multiple search domains, separate them with a space:  `domain1 domain2 domain3`
+
+![Example](example-main.png)
+![Settings](example-settings.png)
