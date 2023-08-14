@@ -1,6 +1,5 @@
 body {
-  background-image: url("../lib/snx-rs-gui/assets/background.jpg");
-  /* background-color: grey; */
+  background-color: #303030;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -11,7 +10,7 @@ body {
 
 .error-container {
   margin: 1rem;
-  background-color: red;
+  background-color: #EF6262;
   color: white;
   border-radius: 4px;
 }
@@ -41,18 +40,18 @@ body {
 
 .status {
   color: white;
-  background-color: #ff9900;
+  background-color: #494b50;
   border-radius: 4px;
   padding: 0.3rem;
 }
 
 .status-text-green {
-  color: #008000;
+  color: #5B9A8B;
   font-weight: bold;
 }
 
 .status-text-red{
-  color: #ff0000; 
+  color: #EF6262; 
   font-weight: bold;
 }
 
@@ -92,11 +91,11 @@ body {
 }
 
 .form-button.connect {
-  background: rgb(28, 184, 65);
+  background: #5B9A8B;
 }
 
 .form-button.disconnect {
-  background: rgb(202, 60, 60);
+  background: #EF6262;
 }
 
 .form-button:disabled {
@@ -111,7 +110,6 @@ body {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  background-color: lightgray;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -126,8 +124,9 @@ body {
   position: fixed;
   top: 70px;
   right: 20px;
+  color: white;
   width: 400px;
-  background-color: lightgray;
+  background-color: #494b50;
   padding: 10px;
   border-radius: 5px;
 }

@@ -20,6 +20,7 @@ fn main() {
         .build()
         .expect("Failed to initialize logger");
     const MAX_PACKET_SIZE: usize = 1_000_000;
+    const USER_CONF_PATH: &str = "user-config.json";
     static SERVER_ADDRESS: &str = "127.0.0.1:7779";
     let title = "snx-rs-gui";
     let user_config = read_config().unwrap_or_else(|| UserConfig {
@@ -218,7 +219,7 @@ fn main() {
                     }
                 }
                 img {
-                    src: "../lib/snx-rs-gui/assets/settings.png",
+                    src: "../assets/settings_white.png",
                     class: "settings-icon",
                     onclick: move |_| {
                         settings_expanded.set(!settings_expanded.get());
@@ -560,7 +561,7 @@ fn main() {
 
     fn read_config() -> Option<UserConfig> {
         info!("Reading config");
-        if fs::metadata("user-config.json").is_err() {
+        if fs::metadata(&USER_CONF_PATH).is_err() {
             info!("Config file not found");
             return None;
         }
