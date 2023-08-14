@@ -219,7 +219,7 @@ fn main() {
                     }
                 }
                 img {
-                    src: "../assets/settings_white.png",
+                    src: "../lib/snx-rs-gui/assets/settings_white.png",
                     class: "settings-icon",
                     onclick: move |_| {
                         settings_expanded.set(!settings_expanded.get());
