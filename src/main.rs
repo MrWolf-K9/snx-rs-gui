@@ -49,7 +49,7 @@ fn main() {
         let server_address = use_ref(cx, || config.server_name);
         let log_level = use_ref(cx, || config.log_level);
         let reauth = use_state(cx, || config.reauth);
-        let search_domains = use_ref(cx, || config.search_domains);
+        let search_domains = use_ref(cx, || config.search_domains.join(" "));
         let default_route = use_state(cx, || config.default_route);
         let no_routing = use_state(cx, || config.no_routing);
         let no_dns = use_state(cx, || config.no_dns);
@@ -80,7 +80,7 @@ fn main() {
             password: password.read().to_string(),
             log_level: log_level.read().to_string(),
             reauth: reauth.get().to_owned(),
-            search_domains: search_domains.read().to_owned(),
+            search_domains: parse_search_domains(search_domains.read().to_string()),
             default_route: default_route.get().to_owned(),
             no_routing: no_routing.get().to_owned(),
             no_dns: no_dns.get().to_owned(),
@@ -266,15 +266,11 @@ fn main() {
                         }
                         li {
                             "Search domains"
-                            // TODO add support for multiple domains
                             input {
-                                value: "{search_domains.read()[0]}",
-                                // TODO add support for multiple domains
+                                value: "{search_domains.read()}",
                                 placeholder: "",
-                                // TODO add support for multiple domains
                                 class: "settings-form-input",
-                                // TODO add support for multiple domains
-                                oninput: move |e| { search_domains.set(vec![e.value.clone()]) }
+                                oninput: move |e| { search_domains.set(e.value.clone()) }
                             }
                         }
                         li {
@@ -557,6 +553,15 @@ fn main() {
             ),
         };
         res
+    }
+
+    fn parse_search_domains(search_domains: String) -> Vec<String> {
+        info!("Parsing search domains");
+        let mut domains: Vec<String> = Vec::new();
+        for domain in search_domains.split(" ") {
+            domains.push(domain.to_string());
+        }
+        domains
     }
 
     fn read_config() -> Option<UserConfig> {

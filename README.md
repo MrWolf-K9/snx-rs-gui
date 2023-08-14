@@ -8,9 +8,11 @@ Folowing https://dioxuslabs.com/docs/0.3/guide/en/publishing/desktop.html instal
 Have running snx-rs service in `-m command` mode
 
 ## Limitations
-- Search domains support only one domain at this moment
 - You need to have installed 
 
 | Package       | Install command                               |
 |---------------|-----------------------------------------------|
 | libwebkit2gtk | sudo apt-get install -y libwebkit2gtk-4.1-dev |
+
+## Usage
+- For configuring multiple search domains, separate them with a space:  `domain1 domain2 domain3`
