@@ -19,3 +19,7 @@ Have running snx-rs service in `-m command` mode
 
 ![Example](example-main.png)
 ![Settings](example-settings.png)
+
+## Next steps
+- Add enter press support for connecting action.
+- Implement trey icon
