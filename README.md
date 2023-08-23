@@ -9,7 +9,11 @@ Folowing https://dioxuslabs.com/docs/0.3/guide/en/publishing/desktop.html instal
 Have running snx-rs service in `-m command` mode
 
 ## Limitations
-- You need to have installed 
+Login types: 
+- SSO not working.
+- Tested only `Password` and `Password with MS auth`.
+
+You need to have installed: 
 
 | Package       | Install command                               |
 |---------------|-----------------------------------------------|
