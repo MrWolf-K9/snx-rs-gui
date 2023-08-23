@@ -22,8 +22,8 @@ Have running snx-rs service in `-m command` mode
 ![Settings](example-settings.png)
 
 ## Next steps
-- Add enter press support for connecting action.
-- Implement trey icon
+- Add keyboard support for actions: `Enter` for Connect button. 
+- Implement tray icon (currently not possible due to Dioxus limitation)
 
 ## Compatible snx-rs versions
 - 0.3.0
