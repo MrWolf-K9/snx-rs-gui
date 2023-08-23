@@ -2,7 +2,8 @@
 Rust gui app for the [snx-rs](github.com/ancwrd1/snx-rs). Written with Dioxus gui library.
 
 ## Build
-Folowing https://dioxuslabs.com/docs/0.3/guide/en/publishing/desktop.html install and run cargo-bundle --release
+Folowing https://dioxuslabs.com/docs/0.3/guide/en/publishing/desktop.html install and run 
+`cargo-bundle --release`
 
 ## Prerequisites
 Have running snx-rs service in `-m command` mode
