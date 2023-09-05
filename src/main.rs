@@ -416,6 +416,7 @@ fn main() {
                             Err(e) => {
                                 error!("error {}", e.to_string().as_str());
                                 sync_status.set(false);
+                                connection_sync_status.set(false);
                             }
                             Ok(connected) => {
                                 connection_sync_status.set(connected);
