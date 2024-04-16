@@ -1,4 +1,5 @@
 use log::{debug, error, info, LevelFilter};
+// use runas::Command;
 use std::fs::File;
 use std::io::{Error, ErrorKind, Write};
 use std::net::UdpSocket;
@@ -217,6 +218,18 @@ fn main() {
                             if **status { "running" } else { "stopped" }
                         }
                     }
+                    // div {
+                    //     class: "restart",
+                    //     button {
+                    //         class: "restart-button",
+                    //         onclick: move |_| {
+                    //             info!("Restarting snx-rs service");
+                    //             let status = Command::new("pkexec").arg("--askpass").arg("systemctl").arg("restart").arg("snx-rs").status().unwrap();
+                    //             info!("Status: {}", status); 
+                    //         },
+                    //         "Restart service"
+                    //     }
+                    // }
                 }
                 img {
                     src: "../lib/snx-rs-gui/assets/settings_white.png",
@@ -444,7 +457,7 @@ fn main() {
                 return Err(std::io::Error::new(
                     ErrorKind::InvalidData,
                     "cannot parse connection status".to_string(),
-                ))
+                ));
             }
         };
         match response_object {
@@ -571,10 +584,12 @@ fn main() {
             info!("Config file not found");
             return None;
         }
-        let file = File::open("user-config.json").unwrap();
+        let file = File::open(&USER_CONF_PATH).unwrap();
         let reader = std::io::BufReader::new(file);
-        let params: UserConfig = serde_json::from_reader(reader).unwrap();
-        return Some(params);
+        match serde_json::from_reader(reader) {
+            Ok(params) => Some(params),
+            Err(_) => None,
+        }
     }
 
     fn remove_password(params: TunnelParams) -> TunnelParams {
